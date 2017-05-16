@@ -21,5 +21,7 @@ with open('article.txt', 'r') as src:
 				out.write('<p>%s</p>\n\n' % line.rstrip('\n'))
 			elif line == '***\n' or line == '**\n':
 				out.write('<p class="aligncenter">%s</p>\n\n' % line.rstrip('\n'))
+			elif line[0].isupper() and line[-2].isupper():
+				out.write('<h2>%s</h2>\n\n' % line.rstrip('\n'))
 			else:
 				out.write('<h3>%s</h3>\n\n' % line.rstrip('\n'))
